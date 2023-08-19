@@ -4,6 +4,21 @@ import androidx.compose.material.Colors
 import androidx.compose.material.darkColors
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Creates a complete color definition for the
+ * [Material color specification](https://material.io/design/color/the-color-system.html#color-theme-creation)
+ * using dark theme values, with true black (#000000) as the background color,
+ * and light gray content color on backgrounds.
+ *
+ * Optimised for AMOLED displays.
+ *
+ * Note: [secondaryVariant] is typically the same as [secondary] in dark theme since contrast
+ * levels are higher, and hence there is less need for a separate secondary color.
+ *
+ * @see darkColors
+ *
+ * @author Rohan Khayech
+ */
 fun trueDarkColors(
     primary: Color = DarkColors.primary,
     primaryVariant: Color = DarkColors.primaryVariant,
@@ -35,6 +50,7 @@ fun trueDarkColors(
     )
 }
 
+/** Static instance of [darkColors]. */
 private val DarkColors = darkColors()
 
 /**
@@ -45,6 +61,8 @@ private val DarkColors = darkColors()
  * See [Dark Theme](https://material.io/design/color/dark-theme.html#custom-application).
  *
  * @return [Colors.primary] if in light theme, else [Colors.background] if [trueDark] is enabled, otherwise [Colors.surface].
+ *
+ * @author Rohan Khayech
  */
 fun Colors.primarySurfaceDark(trueDark: Boolean): Color = if (isLight) primary else if (trueDark) background else surface
 
@@ -55,5 +73,7 @@ fun Colors.primarySurfaceDark(trueDark: Boolean): Color = if (isLight) primary e
  * See [Dark Theme](https://material.io/design/color/dark-theme.html#custom-application).
  *
  * @return [Colors.background] if in dark theme and [trueDark] is enabled, else [Colors.surface].
+ *
+ * @author Rohan Khayech
  */
 fun Colors.surfaceBackground(trueDark: Boolean): Color = if (!isLight || trueDark) background else surface

@@ -134,14 +134,13 @@ annotation class LargeFontPreview
 annotation class FullPreview
 
 /**
- * Wrapper composable that places [content] inside a [theme]
- * and a surface to correctly render a preview.
+ * Wrapper composable that places [content] inside a
+ * material theme and a surface to correctly render a preview.
  *
  * @author Rohan Khayech
  */
 @Composable
 fun PreviewWrapper(
-    theme: MaterialTheme,
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
