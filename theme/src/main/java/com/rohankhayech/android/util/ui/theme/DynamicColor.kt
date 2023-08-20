@@ -46,6 +46,28 @@ fun dynamicDarkColors(context: Context): Colors {
 }
 
 /**
+ * Creates a true dark dynamic color set for Material 2,
+ * with true black (#000000) as the background color,
+ * and light gray content color on backgrounds.
+ *
+ * Optimised for AMOLED displays.
+ *
+ * Use this function to create a color set based off the system wallpaper. If the developer
+ * changes the wallpaper this color set will change accordingly. This dynamic color set is a
+ * dark theme variant.
+ *
+ * @param context The context required to get system resource data.
+ * @author Rohan Khayech
+ */
+@RequiresApi(VERSION_CODES.S)
+fun dynamicTrueDarkColors(context: Context): Colors {
+    return dynamicDarkColors(context).copy(
+        background = Color.Black,
+        onBackground = Color.LightGray,
+    )
+}
+
+/**
  * Creates a dynamic color set from the specified [dynamicColorScheme].
  * @param isLight Whether this Colors is considered as a 'light' or 'dark' set of colors.
  */
