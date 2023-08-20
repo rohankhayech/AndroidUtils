@@ -74,7 +74,6 @@ dependencies {
 
     // Compose
     api("androidx.compose.material:material:1.3.1")
-    implementation("androidx.compose.material3:material3:1.1.1")
     implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
 
