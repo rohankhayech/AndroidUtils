@@ -70,7 +70,7 @@ annotation class TabletThemePreview
  * Previews for tablet devices in portrait and landscape orientation.
  * @author Rohan Khayech
  */
-@Preview(device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait")
+@Preview(group = "Light", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait")
 annotation class TabletOrientationPreview
 
 /**
@@ -79,7 +79,7 @@ annotation class TabletOrientationPreview
  */
 @TabletThemePreview
 @TabletOrientationPreview
-@Preview(device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(group = "Dark", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait", uiMode = Configuration.UI_MODE_NIGHT_YES)
 annotation class TabletOrientationThemePreview
 
 /**
