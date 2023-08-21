@@ -1,6 +1,5 @@
 package com.rohankhayech.android.util.ui.theme
 
-import android.annotation.SuppressLint
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
@@ -34,21 +33,14 @@ import com.rohankhayech.android.util.ui.preview.ThemePreview
  *
  * @author Rohan Khayech
  */
-@SuppressLint("NewApi")
 @Composable
 fun AdaptableMaterialTheme(
     lightColors: Colors = lightColors(),
     darkColors: Colors = darkColors(),
     trueDarkColors: Colors = trueDarkColors(),
-    dynamicLightColors: @Composable (() -> Colors) = {
-        dynamicLightColors(LocalContext.current)
-    },
-    dynamicDarkColors: @Composable (() -> Colors) = {
-        dynamicDarkColors(LocalContext.current)
-    },
-    dynamicTrueDarkColors: @Composable (() -> Colors) = {
-        dynamicTrueDarkColors(LocalContext.current)
-    },
+    dynamicLightColors: @Composable (() -> Colors)? = null,
+    dynamicDarkColors: @Composable (() -> Colors)? = null,
+    dynamicTrueDarkColors: @Composable (() -> Colors)? = null,
     shapes: Shapes = MaterialTheme.shapes,
     typography: Typography = MaterialTheme.typography,
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -62,11 +54,14 @@ fun AdaptableMaterialTheme(
     MaterialTheme(
         colors = when {
             useDynamicColor && darkTheme && trueDark ->
-                dynamicTrueDarkColors()
+                dynamicTrueDarkColors?.invoke()
+                    ?: dynamicTrueDarkColors(LocalContext.current)
             useDynamicColor && darkTheme ->
-                dynamicDarkColors()
+                dynamicDarkColors?.invoke()
+                    ?: dynamicDarkColors(LocalContext.current)
             useDynamicColor ->
-                dynamicLightColors()
+                dynamicLightColors?.invoke()
+                    ?: dynamicLightColors(LocalContext.current)
             darkTheme && trueDark ->
                 trueDarkColors
             darkTheme ->
