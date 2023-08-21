@@ -4,7 +4,12 @@
 
 package com.rohankhayech.android.util.ui.preview
 
-import android.content.res.Configuration
+import android.annotation.SuppressLint
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 /**
@@ -13,11 +18,18 @@ import androidx.compose.ui.tooling.preview.Preview
  */
 
 /**
+ * Preview for dark theme.
+ * @author Rohan Khayech
+ */
+@Preview(group = "Dark", uiMode = UI_MODE_NIGHT_YES)
+annotation class DarkPreview
+
+/**
  * Previews for light and dark theme.
  * @author Rohan Khayech
  */
 @Preview(group = "Light")
-@Preview(group = "Dark", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@DarkPreview
 annotation class ThemePreview
 
 /**
@@ -32,7 +44,7 @@ annotation class LandscapePreview
  * @author Rohan Khayech
  */
 @LandscapePreview
-@Preview(group = "Dark", uiMode = Configuration.UI_MODE_NIGHT_YES, device = "spec:parent=pixel_5,orientation=landscape")
+@Preview(group = "Dark", uiMode = UI_MODE_NIGHT_YES, device = "spec:parent=pixel_5,orientation=landscape")
 annotation class LandscapeThemePreview
 
 /**
@@ -63,13 +75,14 @@ annotation class TabletPreview
  * @author Rohan Khayech
  */
 @TabletPreview
-@Preview(group = "Dark", device = "spec:width=1280dp,height=800dp,dpi=240", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(group = "Dark", device = "spec:width=1280dp,height=800dp,dpi=240", uiMode = UI_MODE_NIGHT_YES)
 annotation class TabletThemePreview
 
 /**
  * Previews for tablet devices in portrait and landscape orientation.
  * @author Rohan Khayech
  */
+@TabletPreview
 @Preview(group = "Light", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait")
 annotation class TabletOrientationPreview
 
@@ -78,9 +91,25 @@ annotation class TabletOrientationPreview
  * @author Rohan Khayech
  */
 @TabletThemePreview
-@TabletOrientationPreview
-@Preview(group = "Dark", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(group = "Light", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait")
+@Preview(group = "Dark", device = "spec:width=1280dp,height=800dp,dpi=240,orientation=portrait", uiMode = UI_MODE_NIGHT_YES)
 annotation class TabletOrientationThemePreview
+
+@Preview(group = "Light", device = "spec:parent=2.7in QVGA")
+annotation class CompactPreview
+
+@CompactPreview
+@Preview(group = "Dark", device = "spec:parent=2.7in QVGA", uiMode = UI_MODE_NIGHT_YES)
+annotation class CompactThemePreview
+
+@CompactPreview
+@Preview(group = "Light", device = "spec:parent=2.7in QVGA,orientation=landscape")
+annotation class CompactOrientationPreview
+
+@CompactThemePreview
+@Preview(group = "Light", device = "spec:parent=2.7in QVGA,orientation=landscape")
+@Preview(group = "Dark", device = "spec:parent=2.7in QVGA,orientation=landscape", uiMode = UI_MODE_NIGHT_YES)
+annotation class CompactOrientationThemePreview
 
 /**
  * Previews for all devices.
@@ -88,6 +117,7 @@ annotation class TabletOrientationThemePreview
  */
 @Preview(group = "Light")
 @TabletPreview
+@CompactPreview
 annotation class DevicePreview
 
 /**
@@ -96,6 +126,7 @@ annotation class DevicePreview
  */
 @ThemePreview
 @TabletThemePreview
+@CompactThemePreview
 annotation class DeviceThemePreview
 
 /**
@@ -104,6 +135,7 @@ annotation class DeviceThemePreview
  */
 @OrientationPreview
 @TabletOrientationPreview
+@CompactOrientationPreview
 annotation class DeviceOrientationPreview
 
 /**
@@ -112,6 +144,7 @@ annotation class DeviceOrientationPreview
  */
 @OrientationThemePreview
 @TabletOrientationThemePreview
+@CompactOrientationThemePreview
 annotation class DeviceOrientationThemePreview
 
 /**
@@ -126,3 +159,14 @@ annotation class LargeFontPreview
 @DeviceOrientationThemePreview
 @LargeFontPreview
 annotation class FullPreview
+
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@FullPreview
+@Composable
+private fun Preview() {
+    PreviewWrapper {
+        Scaffold(topBar = {
+            TopAppBar(title = { Text("Preview") })
+        }) {}
+    }
+}

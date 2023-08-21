@@ -1,7 +1,6 @@
 package com.rohankhayech.android.util.ui.theme
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
@@ -12,8 +11,8 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import com.rohankhayech.android.util.ui.preview.ColorSwatch
+import com.rohankhayech.android.util.ui.preview.DarkPreview
 import com.rohankhayech.android.util.ui.preview.ThemePreview
 
 /**
@@ -89,7 +88,7 @@ private fun Preview() {
     }
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@DarkPreview
 @Composable
 private fun TrueDarkPreview() {
     AdaptableMaterialTheme(trueDark = true) {
@@ -105,7 +104,7 @@ private fun DynamicPreview() {
     }
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@DarkPreview
 @Composable
 private fun DynamicTrueDarkPreview() {
     AdaptableMaterialTheme(trueDark = true, dynamicColor = true) {
