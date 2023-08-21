@@ -51,7 +51,7 @@ fun trueDarkColors(
 }
 
 /** Static instance of [darkColors]. */
-private val DarkColors = darkColors()
+private val DarkColors by lazy { darkColors() }
 
 /**
  * primarySurfaceDark represents the background color of components that are [Colors.primary]

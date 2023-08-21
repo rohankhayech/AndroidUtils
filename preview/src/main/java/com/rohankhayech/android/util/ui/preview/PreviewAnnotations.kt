@@ -4,12 +4,7 @@
 
 package com.rohankhayech.android.util.ui.preview
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 /**
@@ -236,14 +231,3 @@ annotation class LargeFontPreview
 @DeviceOrientationThemePreview
 @LargeFontPreview
 annotation class FullPreview
-
-@FullPreview
-@Composable
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-private fun Preview() {
-    PreviewWrapper {
-        Scaffold(topBar = {
-            TopAppBar(title = { Text("Preview") })
-        }) {}
-    }
-}

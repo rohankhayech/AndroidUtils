@@ -68,7 +68,7 @@ publishing {
 
 dependencies {
     // Project
-    implementation(project(":preview"))
+    debugImplementation(project(":preview"))
 
     // Android
     implementation("androidx.core:core-ktx:1.10.1")

@@ -54,11 +54,3 @@ private fun RowScope.ColorSwatch(
         Text(text = name, Modifier.padding(8.dp), style = MaterialTheme.typography.subtitle2)
     }
 }
-
-@ThemePreview
-@Composable
-private fun Preview() {
-    PreviewWrapper {
-        ColorSwatch()
-    }
-}
