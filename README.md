@@ -22,5 +22,35 @@ Utilities for theming Compose UI.
 
 **Module:** `theme`
 
-### Installation
+### Installation 
 Android Utils is available via Jitpack.io as both a full library or individual modules.
+
+**Latest Version:**
+
+[![](https://jitpack.io/v/rohankhayech/AndroidUtils.svg)](https://jitpack.io/#rohankhayech/AndroidUtils)
+
+To use the library you must first add Jitpack.io as a repository in your project's root level `build.gradle` file:
+```groovy
+allprojects {
+  repositories {
+    // ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+You can then add the full library as a dependency in your app/module level `build.gradle` file:
+```groovy
+dependencies {
+  // ...
+  implementation 'com.github.rohankhayech:AndroidUtils:[version]'
+}
+```
+
+Or add individual modules:
+```groovy
+dependencies {
+  // ...
+  implementation 'com.github.rohankhayech.AndroidUtils:[module]:[version]'
+}
+```
