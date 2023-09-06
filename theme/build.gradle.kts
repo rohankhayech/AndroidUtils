@@ -67,15 +67,13 @@ dependencies {
     debugImplementation(project(":preview"))
 
     // Android
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
 
     // Compose
     api("androidx.compose.material:material:1.3.1")
     implementation("androidx.compose.material3:material3:1.1.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
+    debugImplementation("androidx.compose.ui:ui-tooling-preview:1.5.0")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.5.0")
 
     // Testing
     testImplementation("junit:junit:4.13.2")
