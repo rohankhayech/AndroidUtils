@@ -64,7 +64,7 @@ private val DarkColors by lazy { darkColors() }
  *
  * @author Rohan Khayech
  */
-fun Colors.primarySurfaceDark(trueDark: Boolean): Color = if (isLight) primary else if (trueDark) background else surface
+fun Colors.primarySurfaceBackground(trueDark: Boolean): Color = if (isLight) primary else if (trueDark) background else surface
 
 /**
  * surfaceBackground represents the background color of components that are [Colors.surface]

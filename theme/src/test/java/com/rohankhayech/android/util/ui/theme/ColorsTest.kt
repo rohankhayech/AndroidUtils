@@ -21,19 +21,19 @@ class ColorsTest {
     fun testPrimarySurfaceDark() {
         // Light
         val lColors = lightColors()
-        var psd = lColors.primarySurfaceDark(trueDark = false)
+        var psd = lColors.primarySurfaceBackground(trueDark = false)
         assertEquals(lColors.primary, psd)
-        psd = lColors.primarySurfaceDark(trueDark = true)
+        psd = lColors.primarySurfaceBackground(trueDark = true)
         assertEquals(lColors.primary, psd)
 
         // Dark
         val dColors = darkColors()
-        psd = dColors.primarySurfaceDark(trueDark = false)
+        psd = dColors.primarySurfaceBackground(trueDark = false)
         assertEquals(dColors.surface, psd)
 
         // True Dark
         val tdColors = trueDarkColors()
-        psd = tdColors.primarySurfaceDark(trueDark = true)
+        psd = tdColors.primarySurfaceBackground(trueDark = true)
         assertEquals(tdColors.background, psd)
     }
 
