@@ -4,9 +4,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.rohankhayech.AndroidUtils"
-version = "0.1.0"
-
 android {
     namespace = "com.rohankhayech.android.util.ui.preview"
     compileSdk = 33
@@ -55,9 +52,9 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = project.group.toString()
+            groupId = rootProject.group.toString()
             artifactId = project.name
-            version = project.version.toString()
+            version = rootProject.version.toString()
 
             afterEvaluate {
                 from(components["release"])
