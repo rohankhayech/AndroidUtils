@@ -25,11 +25,17 @@ import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.platform.LocalContext
 
 /**
  * Material theme that adapts to dark mode,
  * with support for true black and dynamic color themes.
+ *
+ * It also provides composition locals for the true dark and dynamic color values.
+ * These can be accessed with the properties [MaterialTheme.isTrueDark] and [MaterialTheme.isDynamicColor] respectively.
+ * These properties both default to false if not provided.
  *
  * @param lightColors Colors to use in light mode.
  * @param darkColors Colors to use in dark mode.
@@ -43,6 +49,9 @@ import androidx.compose.ui.platform.LocalContext
  * @param trueDark Whether to use true dark theme when [darkTheme] is enabled.
  * @param dynamicColor Whether to use a dynamic color theme, if available.
  * @param content Content to display with this theme.
+ *
+ * @see MaterialTheme.isTrueDark
+ * @see MaterialTheme.isDynamicColor
  *
  * @author Rohan Khayech
  */
@@ -64,26 +73,62 @@ fun AdaptableMaterialTheme(
     // Use dynamic color if dynamicColor is true and version requirement is met.
     val useDynamicColor = dynamicColor && Build.VERSION.SDK_INT > Build.VERSION_CODES.S
 
-    MaterialTheme(
-        colors = when {
-            useDynamicColor && darkTheme && trueDark ->
-                dynamicTrueDarkColors?.invoke()
-                    ?: dynamicTrueDarkColors(LocalContext.current)
-            useDynamicColor && darkTheme ->
-                dynamicDarkColors?.invoke()
-                    ?: dynamicDarkColors(LocalContext.current)
-            useDynamicColor ->
-                dynamicLightColors?.invoke()
-                    ?: dynamicLightColors(LocalContext.current)
-            darkTheme && trueDark ->
-                trueDarkColors
-            darkTheme ->
-                darkColors
-            else ->
-                lightColors
-        },
-        shapes = shapes,
-        typography = typography,
-        content = content
-    )
+    CompositionLocalProvider(
+        LocalTrueDarkTheme provides trueDark,
+        LocalDynamicColor provides useDynamicColor
+    ) {
+        MaterialTheme(
+            colors = when {
+                useDynamicColor && darkTheme && trueDark ->
+                    dynamicTrueDarkColors?.invoke()
+                        ?: dynamicTrueDarkColors(LocalContext.current)
+
+                useDynamicColor && darkTheme ->
+                    dynamicDarkColors?.invoke()
+                        ?: dynamicDarkColors(LocalContext.current)
+
+                useDynamicColor ->
+                    dynamicLightColors?.invoke()
+                        ?: dynamicLightColors(LocalContext.current)
+
+                darkTheme && trueDark ->
+                    trueDarkColors
+
+                darkTheme ->
+                    darkColors
+
+                else ->
+                    lightColors
+            },
+            shapes = shapes,
+            typography = typography,
+            content = content
+        )
+    }
 }
+
+/** Composition local key representing whether the current theme uses true dark theme when dark mode is enabled. */
+private val LocalTrueDarkTheme = compositionLocalOf { false }
+
+/**
+ * Whether the current theme uses true dark theme when dark mode is enabled.
+ *
+ * Works in conjunction with the [AdaptableMaterialTheme] composable, and defaults to `false` otherwise.
+ * @see AdaptableMaterialTheme
+ */
+@Suppress("UnusedReceiverParameter")
+val MaterialTheme.isTrueDark: Boolean
+    @Composable get() = LocalTrueDarkTheme.current
+
+/** Composition local key representing whether the current theme uses dynamic color theme. */
+private val LocalDynamicColor = compositionLocalOf { false }
+
+/**
+ * Whether the current theme uses dynamic color theme.
+ *
+ * Works in conjunction with the [AdaptableMaterialTheme] composable, and defaults to `false` otherwise.
+ * @see AdaptableMaterialTheme
+ */
+@Suppress("UnusedReceiverParameter")
+val MaterialTheme.isDynamicColor: Boolean
+    @Composable get() = LocalDynamicColor.current

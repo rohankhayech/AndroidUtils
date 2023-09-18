@@ -16,16 +16,32 @@
 
 package com.rohankhayech.android.util.ui.theme
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.rohankhayech.android.util.ui.preview.ColorSwatch
 import com.rohankhayech.android.util.ui.preview.DarkPreview
 import com.rohankhayech.android.util.ui.preview.ThemePreview
+
+@Composable
+private fun PreviewContent() {
+    Surface(color = MaterialTheme.colors.background) {
+        Column {
+            ColorSwatch()
+            Text("True dark: ${MaterialTheme.isTrueDark}")
+            Text("Dynamic color: ${MaterialTheme.isDynamicColor}")
+        }
+    }
+}
 
 @ThemePreview
 @Composable
 private fun Preview() {
     AdaptableMaterialTheme {
-        ColorSwatch()
+        PreviewContent()
     }
 }
 
@@ -33,7 +49,7 @@ private fun Preview() {
 @Composable
 private fun TrueDarkPreview() {
     AdaptableMaterialTheme(trueDark = true) {
-        ColorSwatch()
+        PreviewContent()
     }
 }
 
@@ -41,7 +57,7 @@ private fun TrueDarkPreview() {
 @Composable
 private fun DynamicPreview() {
     AdaptableMaterialTheme(dynamicColor = true) {
-        ColorSwatch()
+        PreviewContent()
     }
 }
 
@@ -49,6 +65,20 @@ private fun DynamicPreview() {
 @Composable
 private fun DynamicTrueDarkPreview() {
     AdaptableMaterialTheme(trueDark = true, dynamicColor = true) {
-        ColorSwatch()
+        PreviewContent()
+    }
+}
+
+/** Preview of default composition local values. */
+@Preview
+@Composable
+private fun DefaultPreview() {
+    MaterialTheme {
+        Surface(color = MaterialTheme.colors.background) {
+            Column {
+                Text("True dark: ${MaterialTheme.isTrueDark}")
+                Text("Dynamic color: ${MaterialTheme.isDynamicColor}")
+            }
+        }
     }
 }
