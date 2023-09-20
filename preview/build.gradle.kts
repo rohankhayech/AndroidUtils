@@ -103,8 +103,11 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
 
     // Compose
+    //noinspection GradleDependency (Unnecessary recomposition on >1.4.0-alpha03)
     api("androidx.compose.material:material:1.3.1")
+    //noinspection GradleDependency (Unnecessary recomposition on >1.4.0-alpha03)
     implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
+    //noinspection GradleDependency (Unnecessary recomposition on >1.4.0-alpha03)
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
 
     // Testing
