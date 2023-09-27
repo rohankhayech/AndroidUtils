@@ -17,7 +17,9 @@
 package com.rohankhayech.android.util.ui.theme
 
 import androidx.compose.material.Colors
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 /**
@@ -70,7 +72,7 @@ fun trueDarkColors(
 private val DarkColors by lazy { darkColors() }
 
 /**
- * primarySurfaceDark represents the background color of components that are [Colors.primary]
+ * primarySurfaceBackground represents the background color of components that are [Colors.primary]
  * in light theme, [Colors.surface] in dark theme, and [Colors.background] in true dark theme,
  * such as [androidx.compose.material.TabRow] and [androidx.compose.material.TopAppBar].
  * This is to reduce brightness of large surfaces in dark theme, aiding contrast and readability.
@@ -83,9 +85,23 @@ private val DarkColors by lazy { darkColors() }
 fun Colors.primarySurfaceBackground(trueDark: Boolean): Color = if (isLight) primary else if (trueDark) background else surface
 
 /**
+* primarySurfaceBackground represents the background color of components that are [Colors.primary]
+* in light theme, [Colors.surface] in dark theme, and [Colors.background] in true dark theme,
+* such as [androidx.compose.material.TabRow] and [androidx.compose.material.TopAppBar].
+* This is to reduce brightness of large surfaces in dark theme, aiding contrast and readability.
+* See [Dark Theme](https://material.io/design/color/dark-theme.html#custom-application).
+*
+* @return [Colors.primary] if in light theme, else [Colors.background] if [MaterialTheme.usesTrueDark] is enabled, otherwise [Colors.surface].
+*
+* @author Rohan Khayech
+*/
+val Colors.primarySurfaceBackground
+    @Composable get() = primarySurfaceBackground(MaterialTheme.usesTrueDark)
+
+/**
  * surfaceBackground represents the background color of components that are [Colors.surface]
  * in light and dark theme, and [Colors.background] in true dark theme.
- * This is to reduce brightness of large surfaces in dark theme, aiding contrast and readability.
+ * This is to reduce brightness of large surfaces in true dark theme, aiding contrast and readability.
  * See [Dark Theme](https://material.io/design/color/dark-theme.html#custom-application).
  *
  * @return [Colors.background] if in dark theme and [trueDark] is enabled, else [Colors.surface].
@@ -93,3 +109,17 @@ fun Colors.primarySurfaceBackground(trueDark: Boolean): Color = if (isLight) pri
  * @author Rohan Khayech
  */
 fun Colors.surfaceBackground(trueDark: Boolean): Color = if (!isLight || trueDark) background else surface
+
+/**
+ * surfaceBackground represents the background color of components that are [Colors.surface]
+ * in light and dark theme, and [Colors.background] in true dark theme.
+ * This is to reduce brightness of large surfaces in true dark theme, aiding contrast and readability.
+ * See [Dark Theme](https://material.io/design/color/dark-theme.html#custom-application).
+ *
+ * @return [Colors.background] if in dark theme and [MaterialTheme.usesTrueDark] is enabled, else [Colors.surface].
+ *
+ * @author Rohan Khayech
+ */
+val Colors.surfaceBackground
+    @Composable get() = surfaceBackground(MaterialTheme.usesTrueDark)
+

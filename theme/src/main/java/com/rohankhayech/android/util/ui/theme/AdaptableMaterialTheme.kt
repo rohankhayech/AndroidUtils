@@ -33,8 +33,7 @@ import androidx.compose.ui.platform.LocalContext
  * Material theme that adapts to dark mode,
  * with support for true black and dynamic color themes.
  *
- * It also provides composition locals for the true dark and dynamic color values.
- * These can be accessed with the properties [MaterialTheme.isTrueDark] and [MaterialTheme.isDynamicColor] respectively.
+ * It also provides composition locals for the true dark and dynamic color values.* These can be accessed with the properties [MaterialTheme.usesTrueDark] and [MaterialTheme.usesDynamicColor] respectively.
  * These properties both default to false if not provided.
  *
  * @param lightColors Colors to use in light mode.
@@ -50,8 +49,8 @@ import androidx.compose.ui.platform.LocalContext
  * @param dynamicColor Whether to use a dynamic color theme, if available.
  * @param content Content to display with this theme.
  *
- * @see MaterialTheme.isTrueDark
- * @see MaterialTheme.isDynamicColor
+ * @see MaterialTheme.usesTrueDark
+ * @see MaterialTheme.usesDynamicColor
  *
  * @author Rohan Khayech
  */
@@ -117,7 +116,7 @@ private val LocalTrueDarkTheme = compositionLocalOf { false }
  * @see AdaptableMaterialTheme
  */
 @Suppress("UnusedReceiverParameter")
-val MaterialTheme.isTrueDark: Boolean
+val MaterialTheme.usesTrueDark: Boolean
     @Composable get() = LocalTrueDarkTheme.current
 
 /** Composition local key representing whether the current theme uses dynamic color theme. */
@@ -130,5 +129,5 @@ private val LocalDynamicColor = compositionLocalOf { false }
  * @see AdaptableMaterialTheme
  */
 @Suppress("UnusedReceiverParameter")
-val MaterialTheme.isDynamicColor: Boolean
+val MaterialTheme.usesDynamicColor: Boolean
     @Composable get() = LocalDynamicColor.current
