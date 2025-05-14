@@ -14,25 +14,25 @@
  * limitations under the License.
  */
 
-package com.rohankhayech.android.util.ui.theme
+package com.rohankhayech.android.util.ui.theme.m3
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.rohankhayech.android.util.ui.preview.ColorSwatch
 import com.rohankhayech.android.util.ui.preview.DarkPreview
 import com.rohankhayech.android.util.ui.preview.ThemePreview
+import com.rohankhayech.android.util.ui.preview.m3.ColorSwatch
 
 @Composable
 private fun PreviewContent() {
-    Surface(color = MaterialTheme.colors.background) {
+    Surface(color = MaterialTheme.colorScheme.background) {
         Column {
             ColorSwatch()
-            Text("True dark: ${MaterialTheme.usesTrueDark}")
-            Text("Dynamic color: ${MaterialTheme.usesDynamicColor}")
+            Text("True dark: ${MaterialTheme.isTrueDark}")
+            Text("Dynamic color: ${MaterialTheme.isDynamicColor}")
         }
     }
 }
@@ -74,10 +74,10 @@ private fun DynamicTrueDarkPreview() {
 @Composable
 private fun DefaultPreview() {
     MaterialTheme {
-        Surface(color = MaterialTheme.colors.background) {
+        Surface(color = MaterialTheme.colorScheme.background) {
             Column {
-                Text("True dark: ${MaterialTheme.usesTrueDark}")
-                Text("Dynamic color: ${MaterialTheme.usesDynamicColor}")
+                Text("True dark: ${MaterialTheme.isTrueDark}")
+                Text("Dynamic color: ${MaterialTheme.isDynamicColor}")
             }
         }
     }
