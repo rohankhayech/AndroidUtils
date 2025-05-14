@@ -20,7 +20,7 @@ Utilities for theming Compose UI.
 - Dynamic color sets for Material 2, including color harmonisation methods for Compose.
 - Extended default component colors including secondary (de-emphasised) button colors.
 
-**Module:** `theme`
+**Module:** `theme` (Material 2) or `theme-m3` (Material 3) 
 
 ## Installation 
 Android Utils is available via Jitpack.io as both a full library or individual modules.
@@ -57,7 +57,7 @@ dependencies {
 
 ## License and Copyright
 
-Copyright © 2023 Rohan Khayech
+Copyright © 2025 Rohan Khayech
 
 Android Utils is licensed under the Apache License, Version 2.0.
 
