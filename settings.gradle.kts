@@ -33,3 +33,4 @@ rootProject.name = "AndroidUtils"
 include(":preview")
 include(":theme")
 include(":theme-m3")
+include(":layout")

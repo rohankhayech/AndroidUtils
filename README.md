@@ -5,6 +5,14 @@ Collection of utility modules useful for Android projects.
 
 ## Modules
 
+### Layout Utils
+Utilities for Compose layouts.
+- Helper function to scroll lazy list items to a specific position on the screen
+- Effect to automatically scroll to the selected item in a lazy list.
+
+**Module:** `layout`
+
+
 ### Preview Utils
 Utilities for Compose previews.
 - Preview annotations for combinations of theme, devices, orientation and more.
@@ -57,12 +65,12 @@ dependencies {
 
 ## License and Copyright
 
-Copyright © 2023 Rohan Khayech
+Copyright © 2025 Rohan Khayech
 
 Android Utils is licensed under the Apache License, Version 2.0.
 
 ```
-Copyright 2023 Rohan Khayech
+Copyright 2025 Rohan Khayech
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
