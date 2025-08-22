@@ -57,7 +57,7 @@ fun ColorSwatch() {
                 ColorSwatch(name = "Surface Dim", color = MaterialTheme.colorScheme.surfaceDim)
                 ColorSwatch(name = "Secondary Container", color = MaterialTheme.colorScheme.surface)
                 ColorSwatch(name = "Tertiary Container", color = MaterialTheme.colorScheme.surfaceBright)
-                ColorSwatch(name = "Error Container", color = MaterialTheme.colorScheme.inverseSurface)
+                ColorSwatch(name = "Inverse Surface", color = MaterialTheme.colorScheme.inverseSurface)
             }
         }
     }
