@@ -12,7 +12,6 @@ Utilities for Compose layouts.
 
 **Module:** `layout`
 
-
 ### Preview Utils
 Utilities for Compose previews.
 - Preview annotations for combinations of theme, devices, orientation and more.
