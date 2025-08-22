@@ -8,7 +8,7 @@ Collection of utility modules useful for Android projects.
 ### Layout Utils
 Utilities for Compose layouts.
 - Helper function to scroll lazy list items to a specific position on the screen
-- Effect to automatically scroll to the selected item in a lazy list.
+- Effect which automatically scrolls to the selected item in a lazy list.
 
 **Module:** `layout`
 
