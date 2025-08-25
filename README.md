@@ -26,6 +26,7 @@ Utilities for theming Compose UI.
 - True dark (AMOLED black) color set and associated color methods.
 - Dynamic color sets for Material 2, including color harmonisation methods for Compose.
 - Extended default component colors including secondary (de-emphasised) button colors.
+- Drop-in status bar color component to set light or dark status bar icons.
 
 **Module:** `theme` (Material 2) or `theme-m3` (Material 3) 
 
