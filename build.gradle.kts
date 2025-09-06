@@ -16,13 +16,14 @@
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 group = "com.github.rohankhayech.AndroidUtils"
-version = "0.6.0"
+version = "0.6.1"
 
 plugins {
-    id("com.android.application") version "8.1.0" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
-    id("com.android.library") version "8.1.0" apply false
-    id("org.jetbrains.dokka") version "1.9.0"
+    alias(libs.plugins.android.app) apply false
+    alias(libs.plugins.android.lib) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.dokka)
 }
 
 subprojects {

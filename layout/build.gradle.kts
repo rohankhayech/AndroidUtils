@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.rohankhayech.android.util.ui.layout"
-    compileSdk = 33
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -51,16 +54,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
     buildFeatures {
         compose = true
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
     }
 }
 
@@ -100,13 +105,13 @@ publishing {
 
 dependencies {
     // Compose
-    implementation("androidx.compose.foundation:foundation-android:1.9.0")
+    implementation(libs.androidx.foundation.android)
 
     // Testing
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
     // Dokka
-    dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.0")
+    dokkaPlugin(libs.android.documentation.plugin)
 }

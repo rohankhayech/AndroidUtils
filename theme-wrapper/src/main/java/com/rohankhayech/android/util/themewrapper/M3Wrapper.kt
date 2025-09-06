@@ -19,11 +19,13 @@ package com.rohankhayech.android.util.themewrapper
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.material3.*
+import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.MaterialTheme as M2Theme
 
 /**
@@ -193,8 +195,7 @@ object M3WrapperDefaults {
             onErrorContainer,
             outline,
             outlineVariant,
-            scrim,
-        )
+            scrim)
     }
 
     /** The default typography mappings from M2 to M3. */

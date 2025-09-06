@@ -17,16 +17,43 @@
 package com.rohankhayech.android.util.themewrapper
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.Checkbox
+import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.ListItem
+import androidx.compose.material.LocalContentColor
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Switch
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
+import androidx.compose.material.TextField
+import androidx.compose.material.TopAppBar
+import androidx.compose.material.darkColors
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.lightColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -40,7 +67,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Button as M3Button
 import androidx.compose.material3.Card as M3Card
 import androidx.compose.material3.Checkbox as M3Checkbox
-import androidx.compose.material3.Divider as M3Divider
 import androidx.compose.material3.FloatingActionButton as M3FloatingActionButton
 import androidx.compose.material3.Icon as M3Icon
 import androidx.compose.material3.IconButton as M3IconButton
@@ -181,7 +207,7 @@ internal fun M3Components() {
                 M3Checkbox(checked = true, onCheckedChange = {})
                 M3Checkbox(checked = false, onCheckedChange = {})
             }
-            M3Divider()
+            HorizontalDivider()
             M3ListItem(
                 headlineContent = { M3Text("Text") },
                 supportingContent = { M3Text("Secondary Text") },
