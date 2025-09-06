@@ -28,7 +28,18 @@ Utilities for theming Compose UI.
 - Extended default component colors including secondary (de-emphasised) button colors.
 - Drop-in status bar color component to set light or dark status bar icons.
 
-**Module:** `theme` (Material 2) or `theme-m3` (Material 3) 
+**Module:** `theme` (Material 2) or `theme-m3` (Material 3)
+
+### Theme Wrapper for Compose Material 3
+Provides wrappers to apply Material 3 (M3) themes to Material 2 (M2) components and vice-versa.
+- Provides wrapper composables that take the color, typography and shape values from the applied M2/M3 theme and maps them onto a M3/M2 theme.
+- Use existing Compose components and libraries built with M2 in your M3 project, and your theme will be applied.
+- Use new M3 components in your existing M2 project.
+- Migrate parts of your UI or migrate your theme without worrying about compatibility with old or new Compose libraries and components.
+
+See the [documentation](/theme-wrapper/README.md) for more info and usage instructions.
+
+**Module:** `theme-wrapper`
 
 ## Installation 
 Android Utils is available via Jitpack.io as both a full library or individual modules.
