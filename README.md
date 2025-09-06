@@ -42,37 +42,41 @@ See the [documentation](/theme-wrapper/README.md) for more info and usage instru
 **Module:** `theme-wrapper`
 
 ## Installation 
-Android Utils is available via Jitpack.io as both a full library or individual modules.
+Android Utils is available via Jitpack.io as individual modules and as a full library.
 
 **Latest Version:**
 
 [![](https://jitpack.io/v/rohankhayech/AndroidUtils.svg)](https://jitpack.io/#rohankhayech/AndroidUtils)
 
-To use the library you must first add Jitpack.io as a repository in your project's root level `build.gradle` file:
-```groovy
-allprojects {
-  repositories {
-    // ...
-    maven { url 'https://jitpack.io' }
-  }
+To use the library you must first add Jitpack.io as a repository in your project's root level `settings.gradle.kts` file:
+```kotlin
+dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			// ...
+			maven { url = uri("https://jitpack.io") }
+		}
+	}
 }
 ```
 
-You can then add the full library as a dependency in your app/module level `build.gradle` file:
-```groovy
+You can then add the the required modules from the library as dependencies in your app/module level `build.gradle.kts` file:
+```kotlin
 dependencies {
   // ...
-  implementation 'com.github.rohankhayech:AndroidUtils:[version]'
+  implementation("com.github.rohankhayech.AndroidUtils:[module]:[version]")
 }
 ```
 
-Or add individual modules:
-```groovy
+Or add the whole library:
+```kotlin
 dependencies {
   // ...
-  implementation 'com.github.rohankhayech.AndroidUtils:[module]:[version]'
+  implementation("com.github.rohankhayech:AndroidUtils:[version]")
 }
 ```
+> [!NOTE]
+> Adding the whole library will include both M2 and M3 modules, as well as migration compatibility modules. It is recommended to only install the modules your project uses.
 
 ## License and Copyright
 
