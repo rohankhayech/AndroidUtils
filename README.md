@@ -51,11 +51,10 @@ Android Utils is available via Jitpack.io as individual modules and as a full li
 To use the library you must first add Jitpack.io as a repository in your project's root level `settings.gradle.kts` file:
 ```kotlin
 dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			// ...
-			maven { url = uri("https://jitpack.io") }
-		}
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+	repositories {
+		// ...
+		maven { url = uri("https://jitpack.io") }
 	}
 }
 ```
