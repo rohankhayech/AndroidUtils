@@ -58,20 +58,21 @@ dependencyResolutionManagement {
 	}
 }
 ```
+It is recommended to add JitPack as the last repository in the list to avoid package conflicts.
 
 You can then add the the required modules from the library as dependencies in your app/module level `build.gradle.kts` file:
 ```kotlin
 dependencies {
-  // ...
-  implementation("com.github.rohankhayech.AndroidUtils:[module]:[version]")
+	// ...
+	implementation("com.github.rohankhayech.AndroidUtils:[module]:[version]")
 }
 ```
 
 Or add the whole library:
 ```kotlin
 dependencies {
-  // ...
-  implementation("com.github.rohankhayech:AndroidUtils:[version]")
+	// ...
+	implementation("com.github.rohankhayech:AndroidUtils:[version]")
 }
 ```
 > [!NOTE]
