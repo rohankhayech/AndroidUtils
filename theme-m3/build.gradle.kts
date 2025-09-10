@@ -105,7 +105,7 @@ publishing {
 
 dependencies {
     // Project
-    debugImplementation(project(":preview"))
+    debugImplementation(project(":preview-m3"))
 
     // Android
     implementation(libs.material)
@@ -118,8 +118,6 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 
     // Dokka
     dokkaPlugin(libs.android.documentation.plugin)

@@ -107,11 +107,6 @@ dependencies {
     // Compose
     implementation(libs.androidx.foundation.android)
 
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
     // Dokka
     dokkaPlugin(libs.android.documentation.plugin)
 }

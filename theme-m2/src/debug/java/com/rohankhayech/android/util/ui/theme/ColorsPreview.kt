@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+package com.rohankhayech.android.util.ui.theme
 
-rootProject.name = "AndroidUtils"
-include(":preview-core")
-include(":preview-m2")
-include(":preview-m3")
-include(":theme-m2")
-include(":theme-m3")
-include(":layout")
-include(":theme-wrapper")
+import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
+import com.rohankhayech.android.util.ui.preview.ColorSwatch
+import com.rohankhayech.android.util.ui.preview.DarkPreview
+
+/** Preview for [trueDarkColors]. */
+@DarkPreview
+@Composable
+private fun TrueDarkColorsPreview() {
+    MaterialTheme(colors = trueDarkColors()) {
+        ColorSwatch()
+    }
+}

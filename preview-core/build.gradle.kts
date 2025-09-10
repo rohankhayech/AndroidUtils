@@ -24,7 +24,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rohankhayech.android.util.themewrapper"
+    namespace = "com.rohankhayech.android.util.ui.preview"
     compileSdk = 36
 
     defaultConfig {
@@ -46,7 +46,6 @@ android {
     publishing {
         singleVariant("release") {
             withSourcesJar()
-            withJavadocJar()
         }
     }
 
@@ -60,7 +59,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlin.toString()
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
 }
 
@@ -73,17 +72,17 @@ kotlin {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = project.group.toString()
-            artifactId = rootProject.name
-            version = project.version.toString()
+            groupId = rootProject.group.toString()
+            artifactId = project.name
+            version = rootProject.version.toString()
 
             afterEvaluate {
                 from(components["release"])
             }
 
             pom {
-                name.set("Theme Wrapper for Compose M3")
-                description.set("Library for Jetpack Compose providing wrappers to apply Material 3 (M3) themes to Material 2 (M2) components and vice-versa.")
+                name.set("Android Preview Utils Core")
+                description.set("Utilities for Compose previews.")
                 url.set("https://github.com/rohankhayech/AndroidUtils")
 
                 licenses {
@@ -105,8 +104,7 @@ publishing {
 }
 
 dependencies {
-    implementation(libs.androidx.material)
-    implementation(libs.androidx.material3)
+    // Compose
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
 

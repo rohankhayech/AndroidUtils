@@ -24,7 +24,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rohankhayech.android.util.themewrapper"
+    namespace = "com.rohankhayech.android.util.ui.theme"
     compileSdk = 36
 
     defaultConfig {
@@ -46,7 +46,6 @@ android {
     publishing {
         singleVariant("release") {
             withSourcesJar()
-            withJavadocJar()
         }
     }
 
@@ -60,7 +59,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlin.toString()
+        kotlinCompilerExtensionVersion = "1.5.1"
     }
 }
 
@@ -73,17 +72,17 @@ kotlin {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = project.group.toString()
-            artifactId = rootProject.name
-            version = project.version.toString()
+            groupId = rootProject.group.toString()
+            artifactId = project.name
+            version = rootProject.version.toString()
 
             afterEvaluate {
                 from(components["release"])
             }
 
             pom {
-                name.set("Theme Wrapper for Compose M3")
-                description.set("Library for Jetpack Compose providing wrappers to apply Material 3 (M3) themes to Material 2 (M2) components and vice-versa.")
+                name.set("Android Theme Utils")
+                description.set("Utilities for theming Compose UI.")
                 url.set("https://github.com/rohankhayech/AndroidUtils")
 
                 licenses {
@@ -105,10 +104,22 @@ publishing {
 }
 
 dependencies {
-    implementation(libs.androidx.material)
+    debugImplementation(project(":preview-m2"))
+    // Project
+
+    // Android
+    implementation(libs.material)
+
+    // Compose
+    api(libs.androidx.material)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.ui.tooling.preview)
+    debugImplementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
+
+    // Testing
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
     // Dokka
     dokkaPlugin(libs.android.documentation.plugin)

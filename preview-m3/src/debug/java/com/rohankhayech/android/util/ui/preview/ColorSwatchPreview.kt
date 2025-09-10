@@ -14,26 +14,17 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+package com.rohankhayech.android.util.ui.preview
 
-rootProject.name = "AndroidUtils"
-include(":preview-core")
-include(":preview-m2")
-include(":preview-m3")
-include(":theme-m2")
-include(":theme-m3")
-include(":layout")
-include(":theme-wrapper")
+import androidx.compose.runtime.Composable
+import com.rohankhayech.android.util.ui.preview.m3.ColorSwatch
+import com.rohankhayech.android.util.ui.preview.m3.PreviewWrapper
+
+/** Preview of [ColorSwatch]. */
+@ThemePreview
+@Composable
+private fun ColorSwatchPreview() {
+    PreviewWrapper {
+        ColorSwatch()
+    }
+}

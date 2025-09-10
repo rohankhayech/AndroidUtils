@@ -38,7 +38,6 @@ import com.rohankhayech.android.util.ui.preview.m3.ColorSwatch
 private fun TrueDarkColorsPreview() {
     MaterialTheme(colorScheme = darkColorScheme().trueDark()) {
         ColorSwatch()
-        com.rohankhayech.android.util.ui.preview.ColorSwatch()
     }
 }
 
@@ -57,7 +56,7 @@ private fun PrimaryBackgroundPreview() {
                 Text(
                     text = "Primary Background",
                     Modifier.padding(8.dp),
-                    style = androidx.compose.material.MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Surface(
@@ -83,7 +82,7 @@ private fun PrimaryContainerBackgroundPreview() {
                 Text(
                     text = "Primary Container Background",
                     Modifier.padding(8.dp),
-                    style = androidx.compose.material.MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Surface(
@@ -109,7 +108,7 @@ private fun PrimaryContainerBackgroundTrueDarkPreview() {
                 Text(
                     text = "Primary Container Background",
                     Modifier.padding(8.dp).fillMaxWidth(),
-                    style = androidx.compose.material.MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Surface(
@@ -135,7 +134,7 @@ private fun VibrantContainerPreview() {
                 Text(
                     text = "Vibrant Container",
                     Modifier.padding(8.dp),
-                    style = androidx.compose.material.MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Surface(
@@ -161,7 +160,7 @@ private fun VibrantContainerTrueDarkPreview() {
                 Text(
                     text = "Vibrant Container",
                     Modifier.padding(8.dp),
-                    style = androidx.compose.material.MaterialTheme.typography.subtitle2
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Surface(
