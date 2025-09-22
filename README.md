@@ -18,7 +18,7 @@ Utilities for Compose previews.
 - Wrapper to correctly display previews with a background and theme.
 - Color swatch that can be used to preview the colors of a material theme.
 
-**Module:** `preview-m3` (Material 3) or `preview-m3` (Material 2)
+**Module:** `preview-m3` (Material 3) or `preview-m2` (Material 2)
 
 ### Theme Utils
 Utilities for theming Compose UI.
