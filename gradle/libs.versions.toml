@@ -1,8 +1,6 @@
 [versions]
 activityCompose = "1.10.1"
 androidDocumentationPlugin = "2.0.0"
-appcompat = "1.7.1"
-coreKtx = "1.17.0"
 espressoCore = "3.7.0"
 foundationAndroid = "1.9.0"
 junit = "4.13.2"
@@ -14,12 +12,12 @@ uiToolingPreview = "1.9.0"
 kotlin = "2.2.10"
 androidAppPlugin = "8.12.2"
 androidLibPlugin = "8.12.2"
+composeWear = "1.5.6"
+wearToolingPreview = "1.0.0"
 
 [libraries]
 android-documentation-plugin = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "androidDocumentationPlugin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 androidx-foundation-android = { module = "androidx.compose.foundation:foundation-android", version.ref = "foundationAndroid" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitAndroid" }
@@ -29,6 +27,9 @@ androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref =
 androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 junit = { module = "junit:junit", version.ref = "junit" }
 material = { module = "com.google.android.material:material", version.ref = "composeMaterial" }
+compose-wear-material3 = { group = "androidx.wear.compose", name = "compose-material3", version.ref = "composeWear" }
+compose-wear-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "composeWear" }
+androidx-wear-tooling-preview = { group = "androidx.wear", name = "wear-tooling-preview", version.ref = "wearToolingPreview" }
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "androidAppPlugin" }
