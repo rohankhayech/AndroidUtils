@@ -110,6 +110,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
 
+    // Preview
+    debugImplementation(project(":preview-m2"))
+    debugImplementation(project(":preview-m3"))
+
     // Dokka
     dokkaPlugin(libs.android.documentation.plugin)
 }
