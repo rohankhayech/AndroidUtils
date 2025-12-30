@@ -18,7 +18,7 @@ Utilities for Compose previews.
 - Wrapper to correctly display previews with a background and theme.
 - Color swatch that can be used to preview the colors of a material theme.
 
-**Module:** `preview-m3` (Material 3) or `preview-m3` (Material 2)
+**Module:** `preview-m3` (Material 3) / `preview-m2` (Material 2) / `preview-wear` (Wear OS)
 
 ### Theme Utils
 Utilities for theming Compose UI.
@@ -28,7 +28,7 @@ Utilities for theming Compose UI.
 - Extended default component colors including secondary (de-emphasised) button colors.
 - Drop-in status bar color component to set light or dark status bar icons.
 
-**Module:** `theme-m3` (Material 3) or `theme-m2` (Material 2)
+**Module:** `theme-m3` (Material 3) / `theme-m2` (Material 2) / `theme-wear` (Wear OS)
 
 ### Theme Wrapper for Compose Material 3
 Provides wrappers to apply Material 3 (M3) themes to Material 2 (M2) components and vice-versa.

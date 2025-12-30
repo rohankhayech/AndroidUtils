@@ -16,7 +16,7 @@
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 group = "com.github.rohankhayech.AndroidUtils"
-version = "0.7.0"
+version = "0.8.0"
 
 plugins {
     alias(libs.plugins.android.app) apply false
