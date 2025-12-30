@@ -16,7 +16,6 @@
 
 package com.rohankhayech.android.util.themewrapper
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.material.Colors
@@ -26,7 +25,6 @@ import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.MaterialTheme as M3Theme
 
 /**
@@ -183,74 +181,5 @@ object M2WrapperDefaults {
             medium,
             large
         )
-    }
-}
-
-@Preview(name = "M2 Components")
-@Preview(name = "M2 Components - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun M2() {
-    M2AdaptiveTheme {
-        M2Components()
-    }
-}
-
-@Preview(name = "M2 Components in Wrapper")
-@Preview(name = "M2 Components in Wrapper - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun InWrapper() {
-    M3AdaptiveTheme {
-       M2Wrapper {
-           M2Components()
-       }
-    }
-}
-
-@Preview(name = "M3 Components")
-@Preview(name = "M3 Components - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun M3() {
-    M3AdaptiveTheme {
-        M3Components()
-    }
-}
-
-@Preview(name = "M3 Colors")
-@Preview(name = "M3 Colors - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun M3Colors() {
-    M3AdaptiveTheme {
-        M3Swatch()
-    }
-}
-
-@Preview(name = "M2 Colors in Wrapper")
-@Preview(name = "M3 Colors in Wrapper - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun WrapperColors() {
-    M3AdaptiveTheme {
-        M2Wrapper {
-            M2Swatch()
-        }
-    }
-}
-
-@Preview(name = "M2 Colors in Exact Wrapper")
-@Preview(name = "M3 Colors in Exact Wrapper - Dark", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun ExactWrapperColors() {
-    M3AdaptiveTheme {
-        M2Wrapper(colors = M2WrapperDefaults.exactColors()) {
-            M2Swatch()
-        }
-    }
-}
-
-@Preview(name = "M2 Colors")
-@Preview(name = "M3 Colors", uiMode = UI_MODE_NIGHT_YES)
-@Composable
-private fun M2Colors() {
-    M2AdaptiveTheme {
-        M2Swatch()
     }
 }

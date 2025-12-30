@@ -30,8 +30,6 @@ import androidx.compose.material.Checkbox
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.ListItem
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
@@ -43,9 +41,6 @@ import androidx.compose.material.TextButton
 import androidx.compose.material.TextField
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.darkColors
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.lightColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -62,8 +57,6 @@ import androidx.compose.material3.Button as M3Button
 import androidx.compose.material3.Card as M3Card
 import androidx.compose.material3.Checkbox as M3Checkbox
 import androidx.compose.material3.FloatingActionButton as M3FloatingActionButton
-import androidx.compose.material3.Icon as M3Icon
-import androidx.compose.material3.IconButton as M3IconButton
 import androidx.compose.material3.ListItem as M3ListItem
 import androidx.compose.material3.MaterialTheme as M3Theme
 import androidx.compose.material3.OutlinedButton as M3OutlinedButton
@@ -83,18 +76,11 @@ internal fun M2Components() {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("App") },
-                actions = {
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Default.MoreVert, contentDescription = null)
-                    }
-                }
+                title = { Text("App") }
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = {}) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = null)
-            }
+            FloatingActionButton(onClick = {}) {}
         }
     ) {
         Column(
@@ -156,18 +142,11 @@ internal fun M3Components() {
     M3Scaffold(
         topBar = {
             M3TopAppBar(
-                title = { M3Text("App") },
-                actions = {
-                    M3IconButton(onClick = {}) {
-                        M3Icon(imageVector = Icons.Default.MoreVert, contentDescription = null)
-                    }
-                }
+                title = { M3Text("App") }
             )
         },
         floatingActionButton = {
-            M3FloatingActionButton(onClick = {}) {
-                M3Icon(imageVector = Icons.Default.Add, contentDescription = null)
-            }
+            M3FloatingActionButton(onClick = {}) {}
         }
     ) {
         Column(
