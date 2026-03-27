@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Rohan Khayech
+ * Copyright 2026 Rohan Khayech
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 group = "com.github.rohankhayech.AndroidUtils"
-version = "0.8.0"
+version = "0.9.0"
 
 plugins {
     alias(libs.plugins.android.app) apply false
