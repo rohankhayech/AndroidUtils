@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Rohan Khayech
+ * Copyright 2026 Rohan Khayech
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ suspend fun LazyListState.scrollItemToPosition(
 ) {
     val itemSize = this.layoutInfo.visibleItemsInfo.find { item ->
         item.index == index
-    }?.size ?: itemSize ?: this.layoutInfo.visibleItemsInfo[0].size
+    }?.size ?: itemSize ?: this.layoutInfo.visibleItemsInfo.getOrNull(0)?.size
 
     val viewportSize = when (this.layoutInfo.orientation) {
         Orientation.Horizontal -> this.layoutInfo.viewportSize.width
@@ -76,16 +76,18 @@ suspend fun LazyListState.scrollItemToPosition(
     val beforeContentPadding = this.layoutInfo.beforeContentPadding
     val afterContentPadding = this.layoutInfo.afterContentPadding
 
-    val offset = when (position) {
-        ItemScrollPosition.Start -> 0
-        ItemScrollPosition.Center -> (itemSize / 2) + beforeContentPadding - (viewportSize / 2)
-        ItemScrollPosition.End -> itemSize + beforeContentPadding + afterContentPadding - viewportSize
-    }
+    itemSize?.let {
+        val offset = when (position) {
+            ItemScrollPosition.Start -> 0
+            ItemScrollPosition.Center -> (it / 2) + beforeContentPadding - (viewportSize / 2)
+            ItemScrollPosition.End -> it + beforeContentPadding + afterContentPadding - viewportSize
+        }
 
-    if (animated) {
-        this.animateScrollToItem(index, offset + scrollOffset)
-    } else {
-        this.scrollToItem(index, offset + scrollOffset)
+        if (animated) {
+            this.animateScrollToItem(index, offset + scrollOffset)
+        } else {
+            this.scrollToItem(index, offset + scrollOffset)
+        }
     }
 }
 
