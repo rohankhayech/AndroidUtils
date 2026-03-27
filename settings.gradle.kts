@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Rohan Khayech
+ * Copyright 2026 Rohan Khayech
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,3 +39,4 @@ include(":theme-m3")
 include(":theme-wear")
 include(":layout")
 include(":theme-wrapper")
+include(":wear")

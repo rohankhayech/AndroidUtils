@@ -30,6 +30,12 @@ Utilities for theming Compose UI.
 
 **Module:** `theme-m3` (Material 3) / `theme-m2` (Material 2) / `theme-wear` (Wear OS)
 
+### Wear OS Utils
+Utilities for Wear OS.
+- Inline handler for launching system text input and receiving the results.
+
+**Module:** `wear`
+
 ### Theme Wrapper for Compose Material 3
 Provides wrappers to apply Material 3 (M3) themes to Material 2 (M2) components and vice-versa.
 - Provides wrapper composables that take the color, typography and shape values from the applied M2/M3 theme and maps them onto a M3/M2 theme.

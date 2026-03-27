@@ -14,6 +14,7 @@ androidAppPlugin = "8.12.3"
 androidLibPlugin = "8.12.3"
 composeWear = "1.5.6"
 wearToolingPreview = "1.0.0"
+wearInput = "1.2.0"
 
 [libraries]
 android-documentation-plugin = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "androidDocumentationPlugin" }
@@ -30,6 +31,7 @@ material = { module = "com.google.android.material:material", version.ref = "com
 compose-wear-material3 = { group = "androidx.wear.compose", name = "compose-material3", version.ref = "composeWear" }
 compose-wear-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "composeWear" }
 androidx-wear-tooling-preview = { group = "androidx.wear", name = "wear-tooling-preview", version.ref = "wearToolingPreview" }
+androidx-wear-input = { module = "androidx.wear:wear-input", version.ref = "wearInput" }
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "androidAppPlugin" }
