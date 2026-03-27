@@ -68,16 +68,6 @@ dependencies {
 }
 ```
 
-Or add the whole library:
-```kotlin
-dependencies {
-	// ...
-	implementation("com.github.rohankhayech:AndroidUtils:[version]")
-}
-```
-> [!NOTE]
-> Adding the whole library will include both M2 and M3 modules, as well as migration compatibility modules. It is recommended to only install the modules your project uses.
-
 ## License and Copyright
 
 Copyright © 2025 Rohan Khayech
